@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -14,16 +13,16 @@ type GetSmartMoneyNetflowBody struct {
 }
 
 type GetSmartMoneyNetflowData struct {
-	TokenAddress  string      `json:"token_address"`
-	TokenSymbol   string      `json:"token_symbol"`
-	NetFlow24HUsd json.Number `json:"net_flow_24h_usd"`
-	NetFlow7DUsd  json.Number `json:"net_flow_7d_usd"`
-	NetFlow30DUsd json.Number `json:"net_flow_30d_usd"`
-	Chain         string      `json:"chain"`
-	TokenSectors  []string    `json:"token_sectors"`
-	TraderCount   json.Number `json:"trader_count"`
-	TokenAgeDays  json.Number `json:"token_age_days"`
-	MarketCapUsd  json.Number `json:"market_cap_usd"`
+	TokenAddress  string   `json:"token_address"`
+	TokenSymbol   string   `json:"token_symbol"`
+	NetFlow24HUsd float64  `json:"net_flow_24h_usd"`
+	NetFlow7DUsd  float64  `json:"net_flow_7d_usd"`
+	NetFlow30DUsd float64  `json:"net_flow_30d_usd"`
+	Chain         string   `json:"chain"`
+	TokenSectors  []string `json:"token_sectors"`
+	TraderCount   float64  `json:"trader_count"`
+	TokenAgeDays  float64  `json:"token_age_days"`
+	MarketCapUsd  float64  `json:"market_cap_usd"`
 }
 
 type GetSmartMoneyNetflowResponse struct {

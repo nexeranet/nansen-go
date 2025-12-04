@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -14,22 +13,22 @@ type GetSmartMoneyDEXTradesBody struct {
 }
 
 type GetSmartMoneyDEXTradesData struct {
-	Chain                string      `json:"chain"`
-	BlockTimestamp       string      `json:"block_timestamp"`
-	TransactionHash      string      `json:"transaction_hash"`
-	TraderAddress        string      `json:"trader_address"`
-	TraderAddressLabel   string      `json:"trader_address_label"`
-	TokenBoughtAddress   string      `json:"token_bought_address"`
-	TokenSoldAddress     string      `json:"token_sold_address"`
-	TokenBoughtAmount    json.Number `json:"token_bought_amount"`
-	TokenSoldAmount      json.Number `json:"token_sold_amount"`
-	TokenBoughtSymbol    string      `json:"token_bought_symbol"`
-	TokenSoldSymbol      string      `json:"token_sold_symbol"`
-	TokenBoughtAgeDays   json.Number `json:"token_bought_age_days"`
-	TokenSoldAgeDays     json.Number `json:"token_sold_age_days"`
-	TokenBoughtMarketCap json.Number `json:"token_bought_market_cap"`
-	TokenSoldMarketCap   json.Number `json:"token_sold_market_cap"`
-	TradeValueUsd        json.Number `json:"trade_value_usd"`
+	Chain                string  `json:"chain"`
+	BlockTimestamp       string  `json:"block_timestamp"`
+	TransactionHash      string  `json:"transaction_hash"`
+	TraderAddress        string  `json:"trader_address"`
+	TraderAddressLabel   string  `json:"trader_address_label"`
+	TokenBoughtAddress   string  `json:"token_bought_address"`
+	TokenSoldAddress     string  `json:"token_sold_address"`
+	TokenBoughtAmount    float64 `json:"token_bought_amount"`
+	TokenSoldAmount      float64 `json:"token_sold_amount"`
+	TokenBoughtSymbol    string  `json:"token_bought_symbol"`
+	TokenSoldSymbol      string  `json:"token_sold_symbol"`
+	TokenBoughtAgeDays   float64 `json:"token_bought_age_days"`
+	TokenSoldAgeDays     float64 `json:"token_sold_age_days"`
+	TokenBoughtMarketCap float64 `json:"token_bought_market_cap"`
+	TokenSoldMarketCap   float64 `json:"token_sold_market_cap"`
+	TradeValueUsd        float64 `json:"trade_value_usd"`
 }
 
 type GetSmartMoneyDEXTradesResponse struct {

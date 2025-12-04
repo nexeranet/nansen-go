@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -14,16 +13,16 @@ type GetSmartMoneyHoldingsBody struct {
 }
 
 type GetSmartMoneyHoldingsData struct {
-	Chain                   string      `json:"chain"`
-	TokenAddress            string      `json:"token_address"`
-	TokenSymbol             string      `json:"token_symbol"`
-	TokenSectors            []string    `json:"token_sectors"`
-	ValueUsd                json.Number `json:"value_usd"`
-	Balance24HPercentChange json.Number `json:"balance_24h_percent_change"`
-	HoldersCount            json.Number `json:"holders_count"`
-	ShareOfHoldingsPercent  json.Number `json:"share_of_holdings_percent"`
-	TokenAgeDays            json.Number `json:"token_age_days"`
-	MarketCapUsd            json.Number `json:"market_cap_usd"`
+	Chain                   string   `json:"chain"`
+	TokenAddress            string   `json:"token_address"`
+	TokenSymbol             string   `json:"token_symbol"`
+	TokenSectors            []string `json:"token_sectors"`
+	ValueUsd                float64  `json:"value_usd"`
+	Balance24HPercentChange float64  `json:"balance_24h_percent_change"`
+	HoldersCount            float64  `json:"holders_count"`
+	ShareOfHoldingsPercent  float64  `json:"share_of_holdings_percent"`
+	TokenAgeDays            float64  `json:"token_age_days"`
+	MarketCapUsd            float64  `json:"market_cap_usd"`
 }
 
 type GetSmartMoneyHoldingsResponse struct {
