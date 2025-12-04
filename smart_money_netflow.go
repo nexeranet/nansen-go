@@ -16,14 +16,14 @@ type GetSmartMoneyNetflowBody struct {
 type GetSmartMoneyNetflowData struct {
 	TokenAddress  string      `json:"token_address"`
 	TokenSymbol   string      `json:"token_symbol"`
-	NetFlow24HUsd json.Number `json:"net_flow_24h_usd"`
-	NetFlow7DUsd  json.Number `json:"net_flow_7d_usd"`
+	NetFlow24HUsd json.Number `json:"net_flow_24h_usd,string"`
+	NetFlow7DUsd  json.Number `json:"net_flow_7d_usd,string"`
 	NetFlow30DUsd json.Number `json:"net_flow_30d_usd"`
 	Chain         string      `json:"chain"`
 	TokenSectors  []string    `json:"token_sectors"`
-	TraderCount   json.Number `json:"trader_count"`
-	TokenAgeDays  json.Number `json:"token_age_days"`
-	MarketCapUsd  json.Number `json:"market_cap_usd"`
+	TraderCount   json.Number `json:"trader_count,string"`
+	TokenAgeDays  json.Number `json:"token_age_days,string"`
+	MarketCapUsd  json.Number `json:"market_cap_usd,string"`
 }
 
 type GetSmartMoneyNetflowResponse struct {

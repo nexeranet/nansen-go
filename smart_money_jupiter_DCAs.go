@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -13,21 +12,21 @@ type GetSmartMoneyJupiterDCAsBody struct {
 }
 
 type GetSmartMoneyJupiterDCAsData struct {
-	DcaCreatedAt              string      `json:"dca_created_at"`
-	DcaUpdatedAt              string      `json:"dca_updated_at"`
-	TraderAddress             string      `json:"trader_address"`
-	TransactionHash           string      `json:"transaction_hash"`
-	TraderAddressLabel        string      `json:"trader_address_label"`
-	DcaVaultAddress           string      `json:"dca_vault_address"`
-	InputTokenAddress         string      `json:"input_token_address"`
-	OutputTokenAddress        string      `json:"output_token_address"`
-	DepositTokenAmount        json.Number `json:"deposit_token_amount"`
-	TokenSpentAmount          json.Number `json:"token_spent_amount"`
-	OutputTokenRedeemedAmount json.Number `json:"output_token_redeemed_amount"`
-	DcaStatus                 string      `json:"dca_status"`
-	InputTokenSymbol          string      `json:"input_token_symbol"`
-	OutputTokenSymbol         string      `json:"output_token_symbol"`
-	DepositValueUsd           json.Number `json:"deposit_value_usd"`
+	DcaCreatedAt              string `json:"dca_created_at"`
+	DcaUpdatedAt              string `json:"dca_updated_at"`
+	TraderAddress             string `json:"trader_address"`
+	TransactionHash           string `json:"transaction_hash"`
+	TraderAddressLabel        string `json:"trader_address_label"`
+	DcaVaultAddress           string `json:"dca_vault_address"`
+	InputTokenAddress         string `json:"input_token_address"`
+	OutputTokenAddress        string `json:"output_token_address"`
+	DepositTokenAmount        string `json:"deposit_token_amount,string"`
+	TokenSpentAmount          string `json:"token_spent_amount,string"`
+	OutputTokenRedeemedAmount string `json:"output_token_redeemed_amount"`
+	DcaStatus                 string `json:"dca_status"`
+	InputTokenSymbol          string `json:"input_token_symbol"`
+	OutputTokenSymbol         string `json:"output_token_symbol"`
+	DepositValueUsd           string `json:"deposit_value_usd,string"`
 }
 
 type GetSmartMoneyJupiterDCAsResponse struct {
