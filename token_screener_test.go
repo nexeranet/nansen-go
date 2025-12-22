@@ -4,18 +4,14 @@ import (
 	"context"
 	"os"
 	"testing"
-	"time"
 )
 
 func TestGetTokenScreening(t *testing.T) {
 	key := os.Getenv("KEY")
 	ctx := context.Background()
 	client := NewClient(DefaultURL, key)
-	from := time.Now().Add(-24 * time.Hour)
-	to := time.Now()
 	result, err := client.GetTokenScreening(ctx, GetTokenScreeningBody{
 		Chains: []string{"ethereum", "solana", "base"},
-		Date:   *NewDateBody(&from, &to),
 		Pagination: &PaginationBody{
 			Page:    1,
 			PerPage: 10,
