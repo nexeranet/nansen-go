@@ -12,7 +12,7 @@ type GetTGMHoldersBody struct {
 	AggregateByEntity *bool           `json:"aggregate_by_entity,omitempty"`
 	LabelType         string          `json:"label_type,omitempty"`
 	Pagination        *PaginationBody `json:"pagination,omitempty"`
-	Filter            map[string]any  `json:"filter,omitempty"`
+	Filters           map[string]any  `json:"filters,omitempty"`
 	OrderBy           []SortOrderBody `json:"order_by,omitempty"`
 }
 

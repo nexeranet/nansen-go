@@ -13,7 +13,7 @@ type GetTGMDEXTradesBody struct {
 	OnlySmartMoney *bool           `json:"only_smart_money,omitempty"`
 	Date           *DateBody       `json:"date,omitempty"`
 	Pagination     PaginationBody  `json:"pagination"`
-	Filter         map[string]any  `json:"filter,omitempty"`
+	Filters        map[string]any  `json:"filters,omitempty"`
 	OrderBy        []SortOrderBody `json:"order_by,omitempty"`
 }
 

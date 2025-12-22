@@ -11,7 +11,7 @@ type GetAddressCurrentBalanceBody struct {
 	EntityName    string          `json:"entity_name"`
 	Chain         string          `json:"chain"`
 	HideSpamToken *bool           `json:"hide_spam_token,omitempty"`
-	Filter        map[string]any  `json:"filter,omitempty"`
+	Filters       map[string]any  `json:"filters,omitempty"`
 	Pagination    *PaginationBody `json:"pagination,omitempty"`
 	OrderBy       []SortOrderBody `json:"order_by,omitempty"`
 }

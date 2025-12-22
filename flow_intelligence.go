@@ -10,7 +10,7 @@ type GetTGMFlowIntelligenceBody struct {
 	Chain        string         `json:"chain"`
 	TokenAddress string         `json:"token_address"`
 	TimeFrame    TimeFrame      `json:"time_frame"`
-	Filter       map[string]any `json:"filter"`
+	Filters      map[string]any `json:"filters"`
 }
 
 type GetTGMFlowIntelligenceData struct {

@@ -13,7 +13,7 @@ type GetAddressCounterpartiesBody struct {
 	Date        DateBody        `json:"date"`
 	SourceInput *string         `json:"source_input,omitempty"`
 	GroupBy     *string         `json:"group_by,omitempty"`
-	Filter      map[string]any  `json:"filter,omitempty"`
+	Filters     map[string]any  `json:"filters,omitempty"`
 	Pagination  *PaginationBody `json:"pagination,omitempty"`
 	OrderBy     []SortOrderBody `json:"order_by,omitempty"`
 }

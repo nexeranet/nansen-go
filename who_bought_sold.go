@@ -10,7 +10,7 @@ type WhoBoughtSoldBody struct {
 	Chain        string          `json:"chain"`
 	TokenAddress string          `json:"token_address"`
 	Date         DateBody        `json:"date"`
-	Filter       map[string]any  `json:"filter,omitempty"`
+	Filters      map[string]any  `json:"filters,omitempty"`
 	OrderBy      []SortOrderBody `json:"order_by,omitempty"`
 	Pagination   *PaginationBody `json:"pagination,omitempty"`
 	// BUY OR SELL string. Default: BUY

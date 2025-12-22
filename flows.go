@@ -13,7 +13,7 @@ type GetTGMFlowsBody struct {
 	Date         *DateBody       `json:"date,omitempty"`
 	Label        string          `json:"label"`
 	Pagination   PaginationBody  `json:"pagination"`
-	Filter       map[string]any  `json:"filter,omitempty"`
+	Filters      map[string]any  `json:"filters,omitempty"`
 	OrderBy      []SortOrderBody `json:"order_by,omitempty"`
 }
 

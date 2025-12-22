@@ -12,7 +12,7 @@ type GetTGMTransfersBody struct {
 	TokenAddress string          `json:"token_address"`
 	Date         DateBody        `json:"date"`
 	Pagination   *PaginationBody `json:"pagination,omitempty"`
-	Filter       map[string]any  `json:"filter,omitempty"`
+	Filters      map[string]any  `json:"filters,omitempty"`
 	OrderBy      []SortOrderBody `json:"order_by,omitempty"`
 }
 

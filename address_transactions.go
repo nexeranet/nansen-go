@@ -71,7 +71,7 @@ type GetAddressTransactionsBody struct {
 	Date          DateBody        `json:"date"`
 	HideSpamToken *bool           `json:"hide_spam_token,omitempty"`
 	Pagination    *PaginationBody `json:"pagination,omitempty"`
-	Filter        map[string]any  `json:"filter,omitempty"`
+	Filters       map[string]any  `json:"filters,omitempty"`
 	OrderBy       []SortOrderBody `json:"order_by,omitempty"`
 }
 type GetAddressTransactionsData struct {
