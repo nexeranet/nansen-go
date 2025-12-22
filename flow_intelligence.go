@@ -8,7 +8,7 @@ import (
 type GetTGMFlowIntelligenceBody struct {
 	Chain        string         `json:"chain"`
 	TokenAddress string         `json:"token_address"`
-	TimeFrame    string         `json:"time_frame"`
+	TimeFrame    string         `json:"timeframe"`
 	Filters      map[string]any `json:"filters"`
 }
 
