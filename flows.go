@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -17,13 +16,13 @@ type GetTGMFlowsBody struct {
 }
 
 type GetTGMFlowsData struct {
-	Date               string      `json:"date"`
-	PriceUsd           json.Number `json:"price_usd"`
-	TokenAmount        json.Number `json:"token_amount"`
-	ValueUsd           json.Number `json:"value_usd"`
-	HoldersCount       json.Number `json:"holders_count"`
-	TotalInflowsCount  json.Number `json:"total_inflows_count"`
-	TotalOutflowsCount json.Number `json:"total_outflows_count"`
+	Date               string  `json:"date"`
+	PriceUsd           float64 `json:"price_usd"`
+	TokenAmount        float64 `json:"token_amount"`
+	ValueUsd           float64 `json:"value_usd"`
+	HoldersCount       float64 `json:"holders_count"`
+	TotalInflowsCount  float64 `json:"total_inflows_count"`
+	TotalOutflowsCount float64 `json:"total_outflows_count"`
 }
 
 type GetTGMFlowsResponse struct {
@@ -32,10 +31,11 @@ type GetTGMFlowsResponse struct {
 }
 
 func (c *Client) GetTGMFlows(ctx context.Context, body GetTGMFlowsBody) (result *GetTGMFlowsResponse, err error) {
+	var response GetTGMFlowsResponse
 	request := NewRequest(c.Url("/tgm/flows"), body, http.MethodPost)
-	_, err = c.doCall(ctx, request, result)
+	_, err = c.doCall(ctx, request, &response)
 	if err != nil {
-		return result, err
+		return nil, err
 	}
-	return result, nil
+	return &response, nil
 }
