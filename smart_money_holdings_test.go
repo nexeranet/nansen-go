@@ -14,15 +14,17 @@ func TestGetSmartMoneyHoldings(t *testing.T) {
 		Chains: []string{"all"},
 		Pagination: &PaginationBody{
 			Page:    1,
-			PerPage: 10,
+			PerPage: 100,
 		},
 		Filters: map[string]any{
-			"only_smart_money": true,
+			"balance_24h_percent_change": map[string]any{
+				"min": 10,
+			},
 		},
 		OrderBy: []SortOrderBody{
 			{
-				Field:     "chain",
-				Direction: SortingDirectionASC,
+				Field:     "balance_24h_percent_change",
+				Direction: SortingDirectionDESC,
 			},
 		},
 	})
