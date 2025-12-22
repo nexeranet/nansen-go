@@ -16,6 +16,7 @@ func TestGetTokenScreening(t *testing.T) {
 			Page:    1,
 			PerPage: 10,
 		},
+		TimeFrame: "24h",
 		//Filters
 		//"filters": {
 		//	"only_smart_money": true,

@@ -41,7 +41,7 @@ type GetTokenScreeningResponse struct {
 func (c *Client) GetTokenScreening(ctx context.Context, body GetTokenScreeningBody) (result *GetTokenScreeningResponse, err error) {
 	var response GetTokenScreeningResponse
 	request := NewRequest(c.Url("/token-screener"), body, http.MethodPost)
-	_, err = c.doCall(ctx, request, response)
+	_, err = c.doCall(ctx, request, &response)
 	if err != nil {
 		return result, err
 	}
