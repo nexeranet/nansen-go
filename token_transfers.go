@@ -2,9 +2,7 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
-	"time"
 )
 
 type GetTGMTransfersBody struct {
@@ -17,15 +15,15 @@ type GetTGMTransfersBody struct {
 }
 
 type GetTGMTransfersData struct {
-	BlockTimestamp   time.Time   `json:"block_timestamp"`
-	TransactionHash  string      `json:"transaction_hash"`
-	FromAddress      string      `json:"from_address"`
-	ToAddress        string      `json:"to_address"`
-	FromAddressLabel string      `json:"from_address_label"`
-	ToAddressLabel   string      `json:"to_address_label"`
-	TransactionType  string      `json:"transaction_type"`
-	TransferAmount   json.Number `json:"transfer_amount"`
-	TransferValueUsd json.Number `json:"transfer_value_usd"`
+	BlockTimestamp   string  `json:"block_timestamp,omitempty"`
+	TransactionHash  string  `json:"transaction_hash,omitempty"`
+	FromAddress      string  `json:"from_address,omitempty"`
+	ToAddress        string  `json:"to_address,omitempty"`
+	FromAddressLabel string  `json:"from_address_label,omitempty"`
+	ToAddressLabel   string  `json:"to_address_label,omitempty"`
+	TransactionType  string  `json:"transaction_type,omitempty"`
+	TransferAmount   float64 `json:"transfer_amount,omitempty"`
+	TransferValueUsd float64 `json:"transfer_value_usd,omitempty"`
 }
 
 type GetTGMTransfersResponse struct {
@@ -34,10 +32,11 @@ type GetTGMTransfersResponse struct {
 }
 
 func (c *Client) GetTGMTransfers(ctx context.Context, body GetTGMTransfersBody) (result *GetTGMTransfersResponse, err error) {
+	var response GetTGMTransfersResponse
 	request := NewRequest(c.Url("/tgm/transfers"), body, http.MethodPost)
-	_, err = c.doCall(ctx, request, result)
+	_, err = c.doCall(ctx, request, &response)
 	if err != nil {
-		return result, err
+		return nil, err
 	}
-	return result, nil
+	return &response, nil
 }
