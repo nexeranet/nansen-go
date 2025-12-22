@@ -9,7 +9,6 @@ import (
 type GetTGMFlowsBody struct {
 	Chain        string          `json:"chain"`
 	TokenAddress string          `json:"token_address"`
-	TimeFrame    TimeFrame       `json:"time_frame"`
 	Date         *DateBody       `json:"date,omitempty"`
 	Label        string          `json:"label"`
 	Pagination   PaginationBody  `json:"pagination"`
