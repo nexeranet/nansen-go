@@ -6,13 +6,13 @@ import (
 )
 
 type GetAddressPnLBody struct {
-	Chain        string          `json:"chain"`
-	TokenAddress string          `json:"token_address"`
-	Date         *DateBody       `json:"date,omitempty"`
-	Label        string          `json:"label"`
-	Pagination   PaginationBody  `json:"pagination"`
-	Filters      map[string]any  `json:"filters,omitempty"`
-	OrderBy      []SortOrderBody `json:"order_by,omitempty"`
+	Address    *string         `json:"address,omitempty"`
+	EntityName *string         `json:"entity_name,omitempty"`
+	Chain      string          `json:"chain"`
+	Date       *DateBody       `json:"date,omitempty"`
+	Filters    map[string]any  `json:"filters,omitempty"`
+	Pagination PaginationBody  `json:"pagination"`
+	OrderBy    []SortOrderBody `json:"order_by,omitempty"`
 }
 
 type GetAddressPnLData struct {
