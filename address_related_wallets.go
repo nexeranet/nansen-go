@@ -28,6 +28,7 @@ type GetAddressRelatedWalletsResponse struct {
 }
 
 func (c *Client) GetAddressRelatedWallets(ctx context.Context, body GetAddressRelatedWalletsBody) (result *GetAddressRelatedWalletsResponse, err error) {
+	result = &GetAddressRelatedWalletsResponse{}
 	request := NewRequest(c.Url("/profiler/address/related-wallets"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

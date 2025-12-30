@@ -35,6 +35,7 @@ type GetPortfolioDeFiHoldingsResponse struct {
 }
 
 func (c *Client) GetPortfolioDeFiHoldings(ctx context.Context, body GetPortfolioDeFiHoldingsBody) (result *GetPortfolioDeFiHoldingsResponse, err error) {
+	result = &GetPortfolioDeFiHoldingsResponse{}
 	request := NewRequest(c.Url("/portfolio/defi-holdings"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

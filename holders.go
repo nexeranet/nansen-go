@@ -33,7 +33,8 @@ type GetTGMHoldersResponse struct {
 	Pagination *PaginationResponse `json:"pagination,omitempty"`
 }
 
-func (c *Client) GetTGMHolders(ctx context.Context, body GetTGMTransfersBody) (result *GetTGMTransfersResponse, err error) {
+func (c *Client) GetTGMHolders(ctx context.Context, body GetTGMHoldersBody) (result *GetTGMHoldersResponse, err error) {
+	result = &GetTGMHoldersResponse{}
 	request := NewRequest(c.Url("/tgm/transfers"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

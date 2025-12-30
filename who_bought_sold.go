@@ -33,6 +33,7 @@ type WhoBoughtSoldResponse struct {
 }
 
 func (c *Client) WhoBoughtSold(ctx context.Context, body WhoBoughtSoldBody) (result *WhoBoughtSoldResponse, err error) {
+	result = &WhoBoughtSoldResponse{}
 	request := NewRequest(c.Url("/tgm/who-bought-sold"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

@@ -30,6 +30,7 @@ type GetAddressHistoricalBalancesResponse struct {
 }
 
 func (c *Client) GetAddressHistoricalBalances(ctx context.Context, body GetAddressHistoricalBalancesBody) (result *GetAddressHistoricalBalancesResponse, err error) {
+	result = &GetAddressHistoricalBalancesResponse{}
 	request := NewRequest(c.Url("/profiler/address/historical-balances"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

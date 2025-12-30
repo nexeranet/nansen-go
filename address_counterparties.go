@@ -38,6 +38,7 @@ type GetAddressCounterpartiesResponse struct {
 }
 
 func (c *Client) GetAddressCounterparties(ctx context.Context, body GetAddressCounterpartiesBody) (result *GetAddressCounterpartiesResponse, err error) {
+	result = &GetAddressCounterpartiesResponse{}
 	request := NewRequest(c.Url("/profiler/address/counterparties"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {

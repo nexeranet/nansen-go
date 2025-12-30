@@ -32,6 +32,7 @@ type GetAddressCurrentBalanceResponse struct {
 }
 
 func (c *Client) GetAddressCurrentBalance(ctx context.Context, body GetAddressCurrentBalanceBody) (result *GetAddressCurrentBalanceResponse, err error) {
+	result = &GetAddressCurrentBalanceResponse{}
 	request := NewRequest(c.Url("/profiler/address/current-balance"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {
