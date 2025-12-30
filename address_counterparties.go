@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -19,12 +18,12 @@ type GetAddressCounterpartiesBody struct {
 }
 
 type GetAddressCounterpartiesData struct {
-	CounterpartyAddress      string      `json:"counterparty_address"`
-	CounterpartyAddressLabel []string    `json:"counterparty_address_label"`
-	InteractionCount         json.Number `json:"interaction_count"`
-	TotalVolumeUsd           json.Number `json:"total_volume_usd"`
-	VolumeInUsd              json.Number `json:"volume_in_usd"`
-	VolumeOutUsd             json.Number `json:"volume_out_usd"`
+	CounterpartyAddress      string   `json:"counterparty_address"`
+	CounterpartyAddressLabel []string `json:"counterparty_address_label"`
+	InteractionCount         float64  `json:"interaction_count"`
+	TotalVolumeUsd           float64  `json:"total_volume_usd"`
+	VolumeInUsd              float64  `json:"volume_in_usd"`
+	VolumeOutUsd             float64  `json:"volume_out_usd"`
 	TokensInfo               []struct {
 		TokenAddress string `json:"token_address"`
 		TokenSymbol  string `json:"token_symbol"`

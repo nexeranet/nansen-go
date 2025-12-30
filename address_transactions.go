@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -78,33 +77,33 @@ type GetAddressTransactionsData struct {
 	Chain      string `json:"chain"`
 	Method     string `json:"method"`
 	TokensSent []struct {
-		TokenSymbol      string      `json:"token_symbol"`
-		TokenAmount      json.Number `json:"token_amount"`
-		PriceUsd         json.Number `json:"price_usd"`
-		ValueUsd         json.Number `json:"value_usd"`
-		TokenAddress     string      `json:"token_address"`
-		Chain            string      `json:"chain"`
-		FromAddress      string      `json:"from_address"`
-		ToAddress        string      `json:"to_address"`
-		FromAddressLabel string      `json:"from_address_label"`
-		ToAddressLabel   string      `json:"to_address_label"`
+		TokenSymbol      string  `json:"token_symbol"`
+		TokenAmount      float64 `json:"token_amount"`
+		PriceUsd         float64 `json:"price_usd"`
+		ValueUsd         float64 `json:"value_usd"`
+		TokenAddress     string  `json:"token_address"`
+		Chain            string  `json:"chain"`
+		FromAddress      string  `json:"from_address"`
+		ToAddress        string  `json:"to_address"`
+		FromAddressLabel string  `json:"from_address_label"`
+		ToAddressLabel   string  `json:"to_address_label"`
 	} `json:"tokens_sent"`
 	TokensReceived []struct {
-		TokenSymbol      string      `json:"token_symbol"`
-		TokenAmount      json.Number `json:"token_amount"`
-		PriceUsd         json.Number `json:"price_usd"`
-		ValueUsd         json.Number `json:"value_usd"`
-		TokenAddress     string      `json:"token_address"`
-		Chain            string      `json:"chain"`
-		FromAddress      string      `json:"from_address"`
-		ToAddress        string      `json:"to_address"`
-		FromAddressLabel string      `json:"from_address_label"`
-		ToAddressLabel   string      `json:"to_address_label"`
+		TokenSymbol      string  `json:"token_symbol"`
+		TokenAmount      float64 `json:"token_amount"`
+		PriceUsd         float64 `json:"price_usd"`
+		ValueUsd         float64 `json:"value_usd"`
+		TokenAddress     string  `json:"token_address"`
+		Chain            string  `json:"chain"`
+		FromAddress      string  `json:"from_address"`
+		ToAddress        string  `json:"to_address"`
+		FromAddressLabel string  `json:"from_address_label"`
+		ToAddressLabel   string  `json:"to_address_label"`
 	} `json:"tokens_received"`
-	VolumeUsd       json.Number `json:"volume_usd"`
-	BlockTimestamp  string      `json:"block_timestamp"`
-	TransactionHash string      `json:"transaction_hash"`
-	SourceType      string      `json:"source_type"`
+	VolumeUsd       float64 `json:"volume_usd"`
+	BlockTimestamp  string  `json:"block_timestamp"`
+	TransactionHash string  `json:"transaction_hash"`
+	SourceType      string  `json:"source_type"`
 }
 
 type GetAddressTransactionsResponse struct {

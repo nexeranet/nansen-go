@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -18,14 +17,14 @@ type WhoBoughtSoldBody struct {
 }
 
 type WhoBoughtSoldData struct {
-	Address           string      `json:"address"`
-	AddressLabel      string      `json:"address_label"`
-	BoughtTokenVolume json.Number `json:"bought_token_volume"`
-	SoldTokenVolume   json.Number `json:"sold_token_volume"`
-	TokenTradeVolume  json.Number `json:"token_trade_volume"`
-	BoughtVolumeUsd   json.Number `json:"bought_volume_usd"`
-	SoldVolumeUsd     json.Number `json:"sold_volume_usd"`
-	TradeVolumeUsd    json.Number `json:"trade_volume_usd"`
+	Address           string  `json:"address"`
+	AddressLabel      string  `json:"address_label"`
+	BoughtTokenVolume float64 `json:"bought_token_volume"`
+	SoldTokenVolume   float64 `json:"sold_token_volume"`
+	TokenTradeVolume  float64 `json:"token_trade_volume"`
+	BoughtVolumeUsd   float64 `json:"bought_volume_usd"`
+	SoldVolumeUsd     float64 `json:"sold_volume_usd"`
+	TradeVolumeUsd    float64 `json:"trade_volume_usd"`
 }
 
 type WhoBoughtSoldResponse struct {

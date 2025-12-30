@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 	"time"
 )
@@ -18,19 +17,19 @@ type GetTGMDEXTradesBody struct {
 }
 
 type GetTGMDEXTradesData struct {
-	BlockTimestamp        time.Time   `json:"block_timestamp"`
-	TransactionHash       string      `json:"transaction_hash"`
-	TraderAddress         string      `json:"trader_address"`
-	TraderAddressLabel    string      `json:"trader_address_label"`
-	Action                string      `json:"action"`
-	TokenAddress          string      `json:"token_address"`
-	TokenName             string      `json:"token_name"`
-	TokenAmount           json.Number `json:"token_amount"`
-	TradedTokenAddress    string      `json:"traded_token_address"`
-	TradedTokenName       string      `json:"traded_token_name"`
-	TradedTokenAmount     json.Number `json:"traded_token_amount"`
-	EstimatedSwapPriceUsd json.Number `json:"estimated_swap_price_usd"`
-	EstimatedValueUsd     json.Number `json:"estimated_value_usd"`
+	BlockTimestamp        time.Time `json:"block_timestamp"`
+	TransactionHash       string    `json:"transaction_hash"`
+	TraderAddress         string    `json:"trader_address"`
+	TraderAddressLabel    string    `json:"trader_address_label"`
+	Action                string    `json:"action"`
+	TokenAddress          string    `json:"token_address"`
+	TokenName             string    `json:"token_name"`
+	TokenAmount           float64   `json:"token_amount"`
+	TradedTokenAddress    string    `json:"traded_token_address"`
+	TradedTokenName       string    `json:"traded_token_name"`
+	TradedTokenAmount     float64   `json:"traded_token_amount"`
+	EstimatedSwapPriceUsd float64   `json:"estimated_swap_price_usd"`
+	EstimatedValueUsd     float64   `json:"estimated_value_usd"`
 }
 
 type GetTGMDEXTradesResponse struct {

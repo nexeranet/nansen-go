@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 	"time"
 )
@@ -19,25 +18,25 @@ type GetTGMTokenInformation struct {
 	ContractAddress string `json:"contract_address"`
 	Logo            string `json:"logo"`
 	TokenDetails    struct {
-		TokenDeploymentDate time.Time   `json:"token_deployment_date"`
-		Website             string      `json:"website"`
-		X                   string      `json:"x"`
-		Telegram            string      `json:"telegram"`
-		MarketCapUsd        json.Number `json:"market_cap_usd"`
-		FdvUsd              json.Number `json:"fdv_usd"`
-		CirculatingSupply   json.Number `json:"circulating_supply"`
-		TotalSupply         json.Number `json:"total_supply"`
+		TokenDeploymentDate time.Time `json:"token_deployment_date"`
+		Website             string    `json:"website"`
+		X                   string    `json:"x"`
+		Telegram            string    `json:"telegram"`
+		MarketCapUsd        float64   `json:"market_cap_usd"`
+		FdvUsd              float64   `json:"fdv_usd"`
+		CirculatingSupply   float64   `json:"circulating_supply"`
+		TotalSupply         float64   `json:"total_supply"`
 	} `json:"token_details"`
 	SpotMetrics struct {
-		VolumeTotalUsd json.Number `json:"volume_total_usd"`
-		BuyVolumeUsd   json.Number `json:"buy_volume_usd"`
-		SellVolumeUsd  json.Number `json:"sell_volume_usd"`
-		TotalBuys      json.Number `json:"total_buys"`
-		TotalSells     json.Number `json:"total_sells"`
-		UniqueBuyers   json.Number `json:"unique_buyers"`
-		UniqueSellers  json.Number `json:"unique_sellers"`
-		LiquidityUsd   json.Number `json:"liquidity_usd"`
-		TotalHolders   json.Number `json:"total_holders"`
+		VolumeTotalUsd float64 `json:"volume_total_usd"`
+		BuyVolumeUsd   float64 `json:"buy_volume_usd"`
+		SellVolumeUsd  float64 `json:"sell_volume_usd"`
+		TotalBuys      float64 `json:"total_buys"`
+		TotalSells     float64 `json:"total_sells"`
+		UniqueBuyers   float64 `json:"unique_buyers"`
+		UniqueSellers  float64 `json:"unique_sellers"`
+		LiquidityUsd   float64 `json:"liquidity_usd"`
+		TotalHolders   float64 `json:"total_holders"`
 	} `json:"spot_metrics"`
 }
 

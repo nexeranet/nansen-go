@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -17,12 +16,12 @@ type GetAddressHistoricalBalancesBody struct {
 }
 
 type GetAddressHistoricalBalancesData struct {
-	BlockTimestamp string      `json:"block_timestamp"`
-	TokenAddress   string      `json:"token_address"`
-	Chain          string      `json:"chain"`
-	TokenAmount    json.Number `json:"token_amount"`
-	ValueUsd       json.Number `json:"value_usd"`
-	TokenSymbol    string      `json:"token_symbol"`
+	BlockTimestamp string  `json:"block_timestamp"`
+	TokenAddress   string  `json:"token_address"`
+	Chain          string  `json:"chain"`
+	TokenAmount    float64 `json:"token_amount"`
+	ValueUsd       float64 `json:"value_usd"`
+	TokenSymbol    string  `json:"token_symbol"`
 }
 
 type GetAddressHistoricalBalancesResponse struct {

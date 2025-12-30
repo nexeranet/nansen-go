@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -14,13 +13,13 @@ type GetAddressRelatedWalletsBody struct {
 }
 
 type GetAddressRelatedWalletsData struct {
-	Address         string      `json:"address"`
-	AddressLabel    string      `json:"address_label"`
-	Relation        string      `json:"relation"`
-	TransactionHash string      `json:"transaction_hash"`
-	BlockTimestamp  string      `json:"block_timestamp"`
-	Order           json.Number `json:"order"`
-	Chain           string      `json:"chain"`
+	Address         string  `json:"address"`
+	AddressLabel    string  `json:"address_label"`
+	Relation        string  `json:"relation"`
+	TransactionHash string  `json:"transaction_hash"`
+	BlockTimestamp  string  `json:"block_timestamp"`
+	Order           float32 `json:"order"`
+	Chain           string  `json:"chain"`
 }
 
 type GetAddressRelatedWalletsResponse struct {

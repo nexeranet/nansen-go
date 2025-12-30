@@ -2,7 +2,6 @@ package nansen
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 )
 
@@ -17,16 +16,16 @@ type GetTGMHoldersBody struct {
 }
 
 type GetTGMHoldersData struct {
-	Address             string      `json:"address"`
-	AddressLabel        string      `json:"address_label"`
-	TokenAmount         json.Number `json:"token_amount"`
-	TotalOutflow        json.Number `json:"total_outflow"`
-	TotalInflow         json.Number `json:"total_inflow"`
-	BalanceChange24H    json.Number `json:"balance_change_24h"`
-	BalanceChange7D     json.Number `json:"balance_change_7d"`
-	BalanceChange30D    json.Number `json:"balance_change_30d"`
-	OwnershipPercentage json.Number `json:"ownership_percentage"`
-	ValueUsd            json.Number `json:"value_usd"`
+	Address             string  `json:"address"`
+	AddressLabel        string  `json:"address_label"`
+	TokenAmount         float64 `json:"token_amount"`
+	TotalOutflow        float64 `json:"total_outflow"`
+	TotalInflow         float64 `json:"total_inflow"`
+	BalanceChange24H    float64 `json:"balance_change_24h"`
+	BalanceChange7D     float64 `json:"balance_change_7d"`
+	BalanceChange30D    float64 `json:"balance_change_30d"`
+	OwnershipPercentage float64 `json:"ownership_percentage"`
+	ValueUsd            float64 `json:"value_usd"`
 }
 
 type GetTGMHoldersResponse struct {
