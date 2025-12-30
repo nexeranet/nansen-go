@@ -7,8 +7,8 @@ import (
 )
 
 type GetAddressCurrentBalanceBody struct {
-	Address       string          `json:"address"`
-	EntityName    string          `json:"entity_name"`
+	Address       *string         `json:"address,omitempty"`
+	EntityName    *string         `json:"entity_name,omitempty"`
 	Chain         string          `json:"chain"`
 	HideSpamToken *bool           `json:"hide_spam_token,omitempty"`
 	Filters       map[string]any  `json:"filters,omitempty"`

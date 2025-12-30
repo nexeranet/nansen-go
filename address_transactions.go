@@ -113,6 +113,7 @@ type GetAddressTransactionsResponse struct {
 }
 
 func (c *Client) GetAddressTransactions(ctx context.Context, body GetAddressTransactionsBody) (result *GetAddressTransactionsResponse, err error) {
+	result = &GetAddressTransactionsResponse{}
 	request := NewRequest(c.Url("/profiler/address/transactions"), body, http.MethodPost)
 	_, err = c.doCall(ctx, request, result)
 	if err != nil {
