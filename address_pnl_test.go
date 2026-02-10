@@ -12,9 +12,9 @@ func TestGetAddressPnL(t *testing.T) {
 	key := os.Getenv("KEY")
 	ctx := context.Background()
 	client := NewClient(DefaultURL, key)
-	address := "CxCy2T2jtHcZc2TohvwzfJ6P5q9vhF1XLQADMXeHfrgP"
+	address := "9bD2sWCjipw3LsQruoauupftDTNHdmXSnNyRjrEz4XuS"
 	now := time.Now()
-	dayBack := now.AddDate(0, 0, -2)
+	dayBack := now.AddDate(0, 0, -7)
 	result, err := client.GetAddressPnL(ctx, GetAddressPnLBody{
 		Chain:   "solana",
 		Address: &address,
@@ -27,5 +27,8 @@ func TestGetAddressPnL(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error getting smart money dex trades: %v", err)
 	}
-	t.Log(result)
+	//t.Log(result)
+	for _, item := range result.Data {
+		t.Log(item.TokenSymbol, item.TokenPrice, item.PnlUsdRealised)
+	}
 }

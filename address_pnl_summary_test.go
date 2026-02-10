@@ -23,5 +23,8 @@ func TestGetAddressPnLSummary(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error getting smart money dex trades: %v", err)
 	}
-	t.Log(result)
+	t.Log(result.RealizedPnlPercent, result.RealizedPnlUsd)
+	for _, item := range result.Top5Tokens {
+		t.Log(item.TokenSymbol, item.RealizedPnl)
+	}
 }
